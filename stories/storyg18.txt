@@ -1,9 +1,9 @@
-<g-iconic hand hello> Hello </g-iconic>, <g-deictic hand point-to-body> My name is NAO robot </g-iconic> and I am going to tell <g-deictic hand point-forward> you </g-deictic> a story about <g-beat hand emphasis> a lion and a mouse. </g-beat> 
-Once when a lion, <g-beat head look-around> the king of the jungle, </g-beat> was asleep, <g-iconic hand small> a little mouse </g-iconic> began <g-iconic hand run> running up and down on him. </g-iconic> 
+<g-iconic hand hello> Hello </g-iconic>, <g-deictic hand point-to-body> My name is NAO robot </g-iconic> and I am going to tell <g-deictic hand point-forward> you </g-deictic> a story about <g-beat hand anyone> a lion and a mouse. </g-beat> 
+Once when a lion, the king of the jungle, was asleep, <g-iconic hand small> a little mouse </g-iconic> began <g-iconic hand run> running up and down on him. </g-iconic> 
 This soon awakened the lion, who placed his <g-iconic hand grab> huge paw on the mouse </g-iconic>, and opened his <g-iconic hand big> big </g-iconic> jaws to swallow him. 
 "Pardon, O King!" <g-iconic hand afraid> cried </g-deictic> the little mouse. 
-<g-iconic hand please> "Forgive me this time </g-iconic>. I shall never repeat it and I shall <g-deictic head point-front> never forget your kindness </g-deictic>. And who knows, I may be able to <g-iconic hand offer> do you a good turn, </g-iconic> one of these days!” 
+<g-iconic hand please> "Forgive me this time </g-iconic>. I shall never repeat it and <g-deictic head point-front> I shall never forget your kindness </g-deictic>. And who knows, I may be able to <g-iconic hand offer> do you a good turn, </g-iconic> one of these days!” 
 The lion was so <g-beat head look-around> tickled </g-beat> by the idea of the mouse being able to help him that <g-iconic head agree> he lifted his paw and let him go. </g-iconic> 
-Sometime later, <g-beat head look-around> a few hunters captured the lion, </g-beat> and tied him to a tree. After that they went in search of a wagon, to take him to the zoo. 
+Sometime later, <g-beat head look-around> a few hunters captured the lion, </g-beat> and tied him to a tree. After that <g-beat hand anyone> they </g-beat> went in search of a wagon, to take him to the zoo. 
 Just then the little mouse <g-beat head nod> happened to pass by </g-iconic>. On seeing the lion's situation, <g-iconic hand run> he ran up to him and </g-iconic> cut away the ropes that bound him, the king of the jungle. 
 <g-beat hand emphasis> <g-beat head nod> "Was I not right?" </g-beat> </g-beat> said the little mouse, <g-iconic hand big> very happy </g-iconic> to help the lion. 

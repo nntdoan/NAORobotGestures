@@ -47,10 +47,14 @@ def syncGesture2Speech(path=''):
     if isfile(path) and path.endswith('.txt'):
         
         with open(path, 'r') as f:
-            buffer = f.read().replace('\n','') # remove all line breaks left
-        buffer = unidecode(unicode(buffer, encoding="utf-8")).split() # convert all non-ASCII character to ASCII
+            buffer = f.read().replace('\n',' ') # remove all line breaks left
         
-        tospeech, tempStr, idx, elapsed = [], [], 0, 1 # hyper-parameter
+        NEW_STR = buffer.replace('>', '> ').replace('<', ' <')
+        NEW_STR = NEW_STR.replace('   ', ' ').replace('  ', ' ')
+        NEW_STR = NEW_STR.replace(' .', '.')    
+        buffer = unidecode(unicode(NEW_STR, encoding="utf-8")).split() # convert all non-ASCII character to ASCII
+        
+        tospeech, tempStr, idx, elapsed = [], [], 0, 0.5 # hyper-parameter
         gestD = {}
         engine = pyttsx3.init()
         engine.setProperty('rate', 100) # must be the same rate as the actual speaking rate below
@@ -78,19 +82,19 @@ def syncGesture2Speech(path=''):
                     tempStr=[]
 
                 if len(tempStr)==0:
-                    elapsed+=0.000005 # time offset between two encapsulated gestures
+                    elapsed-=0.05 # time offset between two encapsulated gestures
 
                 if buffer[idx+1] == 'head': 
                     nG, tG, kG = importGesture(hand=False, mean=buffer[idx+2])
                     for n, t, k in zip(nG, tG, kG):
                         preptime = max(t)//3 - 0.5 # preparation period of a gesture is the first 1/3 time +-0.5
-                        gestD.setdefault( n, [[], []] )[0].extend([i+elapsed-preptime for i in t]) #-preptime
+                        gestD.setdefault( n, [[], []] )[0].extend([(i+elapsed-preptime)*0.95 for i in t]) #-preptime and speed up by 5%
                         gestD.setdefault( n, [[], []] )[1].extend(k) 
                 elif buffer[idx+1] == 'hand':
                     nG, tG, kG = importGesture(hand=True, mean=buffer[idx+2])
                     for n, t, k in zip(nG, tG, kG):
                         preptime = max(t)//3 - 0.5 # preparation period of a gesture is the first 1/3 time +-0.5
-                        gestD.setdefault( n, [[], []] )[0].extend([i+elapsed-preptime for i in t]) #-preptime
+                        gestD.setdefault( n, [[], []] )[0].extend([(i+elapsed-preptime)*0.95 for i in t]) #-preptime and speed up by 5%
                         gestD.setdefault( n, [[], []] )[1].extend(k) 
                 else: print 'Warning! Body part {} is not supported. \n \
                             You can add new body part with its gesture \
@@ -136,23 +140,23 @@ def tellStory(toSpeak=[]):
 
     engine = pyttsx3.init()
     # PARAMETER: 
-    # This configure the speaking voice, the rate should be 
-    # the same as the rate during reahearsal for the gesture to be
-    # completely align with the speech.
-    engine.setProperty('volume', 0.9) 
+    # This configure the speaking voice.
+    engine.setProperty('volume', 0.8) 
     engine.setProperty('rate', 100)
 
     #==========================================
     # PARAMETER:
     # This control the actual start time of the speech, 
-    time.sleep(2.1) 
+    time.sleep(0) 
     #==========================================
 
     print 'Start speaking' # debug log
-    for frag in toSpeak:
-        engine.say(frag)
-        engine.runAndWait()
-        time.sleep(0) 
+    engine.say('! '.join(toSpeak))
+    engine.runAndWait()
+    # for frag in toSpeak:
+    #     engine.say(frag)
+    #     engine.runAndWait()
+    #     time.sleep(0) 
     print 'Finish speaking' # debug log
     engine.stop()
 

@@ -1,0 +1,2 @@
+<g-iconic hand hello>Hello, Paul</-iconic>
+<g-iconic hand offer>How are you today?</-iconic>  
