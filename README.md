@@ -1,10 +1,9 @@
 # StoryByNAO: Autonomous System Project Assignment
-maintained by @nntdoan
+
 This module read a story out loud with a virtual NAO robot perform gesture along side. 
-Written in Python 2.7.18, tested in Window 10 x64, Choregraphe v2.1.4, for NAO virtual robot.
+System: Python 2.7.18, tested in Window 10 x64, for NAO virtual robot in Choregraphe v2.1.4.
 
 ## Required packages
-Please install the required packages by cd to the directory of the project and use the command:
 
 > pip install -r requirements.txt
 
@@ -66,8 +65,6 @@ This module supports the gestures and their meaning as below. It should graceful
 | nod | head | a single nod |
 | point-front | head | look down and look up |
 
-It is recommended that you put all the stories in the directory ./stories/ but it's fine if you don't want to. Just remember to specify --path2file --storyfile correctly so Python can find the file.
-
 ## Guide to create and add a new gesture
 Should the existing gestures does not meet your need, you can add new gesture very easily as follows. </br>
 
@@ -77,8 +74,6 @@ Should the existing gestures does not meet your need, you can add new gesture ve
 
 3. If this motion is mainly performed by NAO head, you should create a new .py file in gChoregraph/ghead and paste the result of 2. in there. </br>
 Do similarly if the motion is mainly performed by NAO hand, but the .py file is put in gChoregragh/ghand instead. </br>
-
-Then, delete all the unnessary things: import, Alproxy, etc. Only need to keep the assignment of the 3 list names, times, keys and their values. Note that this module only support movement of head and hand for now, so you should only keep the joint names that belong to head and hand. So delete anything that does not belong to head and hand (i.e. ankle, hip, etc. ) if you happen to copy that too from Choregrahe. </br>
  
 4. Name the .py file exactly like how you would use in a .txt story file. </br>
 For example, if you want to use the new gesture as such:
@@ -90,19 +85,19 @@ the .py file need to be named as love.py and is placed within the directory gCho
 Now you should be able to use this gesture! </br>
 
 ## Note regarding the language of the story text
-In theory, story in any languages that are inherently installed with your OS system can be played. This snipet of code below should tell you what language engine you have in your OS (tested in Window). 
+In theory, story in any languages that are inherently installed with your OS system can be played. Find out more by. 
 
-> import pyttsx3
-> engine = pyttsx3.init()
+> import pyttsx3 </br>
+> engine = pyttsx3.init() </br>
 
-> voices = engine.getProperty('voices')
-> for voice in voices:
->    print "Voice:" 
->    print " - ID: %s" % voice.id
->    print " - Name: %s" % voice.name
->    print " - Languages: %s" % voice.languages 
->    print " - Gender: %s" % voice.gender 
->    print " - Age: %s" % voice.age 
+> voices = engine.getProperty('voices') </br>
+> for voice in voices: </br>
+>    print "Voice:"  </br>
+>    print " - ID: %s" % voice.id </br>
+>    print " - Name: %s" % voice.name </br>
+>    print " - Languages: %s" % voice.languages </br>
+>    print " - Gender: %s" % voice.gender </br>
+>    print " - Age: %s" % voice.age </br>
 
 That's it. Enjoy your story time with NAO! </br>
 
