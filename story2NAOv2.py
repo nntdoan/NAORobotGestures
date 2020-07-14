@@ -1,5 +1,4 @@
-# CSAI Autonomous System Project Group 18
-# by NNT Doan (u192067) and D Baltazar (u105006)
+# CSAI Autonomous System Project
 # ===========================================
 import pyttsx3
 import argparse
